@@ -1,4 +1,4 @@
 import { PureEvent } from "../event/PureEvent";
-export declare type Listener<T> = {
-    handle(event: PureEvent<T>): void;
+export declare type Listener<T extends PureEvent> = {
+    handle(event: T): void;
 };
