@@ -1,0 +1,21 @@
+{
+  "name": "@makechtec/event_engine",
+  "version": "1.1.0",
+  "description": "event, listener, dispatcher mecanism",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "makechtec",
+    "event",
+    "listener",
+    "dispatcher"
+  ],
+  "author": "MakechTec",
+  "license": "MIT"
+}
