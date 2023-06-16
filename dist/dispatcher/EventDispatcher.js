@@ -20,7 +20,7 @@ class EventDispatcher {
     dispatch(event) {
         return __awaiter(this, void 0, void 0, function* () {
             this.listeners
-                .filter(registry => registry.eventId === event.getId())
+                .filter(registry => registry.eventId === event.id)
                 .map(registry => registry.listener)
                 .forEach(listener => listener.handle(event));
         });

@@ -17,7 +17,7 @@ export class EventDispatcher<T extends PureEvent>{
     public async dispatch(event: T): Promise<void>{
 
         this.listeners
-            .filter(registry => registry.eventId === event.getId())
+            .filter(registry => registry.eventId === event.id)
             .map( registry => registry.listener )
             .forEach( listener => listener.handle(event) );
 
