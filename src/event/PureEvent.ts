@@ -1,4 +1,4 @@
 
 export type PureEvent = {
-    getId(): string;
+    id: string;
 };
