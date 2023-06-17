@@ -9,21 +9,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EventDispatcher = void 0;
-class EventDispatcher {
+exports.Dispatcher = void 0;
+class Dispatcher {
     constructor() {
-        this.listeners = [];
+        this.registries = [];
     }
-    addListenerRegistry(listenerRegistry) {
-        this.listeners.push(listenerRegistry);
+    addListener(registry) {
+        this.registries.push(registry);
     }
     dispatch(event) {
         return __awaiter(this, void 0, void 0, function* () {
-            this.listeners
+            this.registries
                 .filter(registry => registry.eventId === event.id)
-                .map(registry => registry.listener)
-                .forEach(listener => listener.handle(event));
+                .forEach(registry => registry.listener(event));
         });
     }
 }
-exports.EventDispatcher = EventDispatcher;
+exports.Dispatcher = Dispatcher;
