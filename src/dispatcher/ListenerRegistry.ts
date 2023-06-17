@@ -1,7 +1,6 @@
-import { PureEvent } from "../event/PureEvent";
-import { Listener } from "../listener/Listener";
+import { Listener } from "./Listener";
 
-export type ListenerRegistry<T extends PureEvent> = {
+export type ListenerRegistry = {
     eventId: string;
-    listener: Listener<T>;
+    listener: Listener;
 };
