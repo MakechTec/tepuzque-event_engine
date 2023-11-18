@@ -1,7 +1,6 @@
 
 ## Usage ##
 
-    
 
     import {Dispatcher} from "@makechtec/event_engine";
 
