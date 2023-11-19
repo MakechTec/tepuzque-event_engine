@@ -1,5 +1,6 @@
 import { ListenerRegistry } from "./ListenerRegistry";
 import { PureEvent } from "../event/PureEvent";
+import { Listener } from "../listener/Listener";
 
 export class Dispatcher{
 
@@ -9,14 +10,14 @@ export class Dispatcher{
         this.registries = [];
     }
 
-    public addListener(registry: ListenerRegistry): void{
-        this.registries.push(registry);
+    public addListener(eventId: string, listener: Listener): void{
+        this.registries.push({eventId, listener});
     }
 
     public async dispatch(event: PureEvent): Promise<void>{
         this.registries
             .filter(registry => registry.eventId === event.id)
-            .forEach(registry => registry.listener(event));
+            .forEach( async registry => registry.listener(event));
     }
 
 }
