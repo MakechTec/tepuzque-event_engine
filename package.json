@@ -1,6 +1,6 @@
 {
   "name": "@makechtec/event_engine",
-  "version": "1.3.4",
+  "version": "feature-testing_functionalities",
   "description": "event, listener, dispatcher mecanism",
   "scripts": {
     "compile": "webpack && tsc --emitDeclarationOnly && npm pack",
